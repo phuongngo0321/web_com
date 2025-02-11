@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quảng bá sản phẩm Cốm</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #c3e6cb, #a3d9a1);
+            color: #333;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2.8em;
+            font-weight: bold;
+            color: #2c662d;
+        }
+
+        header img {
+            margin: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4caf50;
+        }
+
+        .container {
+            display: flex;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 25%;
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h2 {
+            color: #388e3c;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #388e3c;
+            padding-bottom: 5px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+            font-size: 1.1em;
+        }
+
+        .sidebar ul li a:hover {
+            background: #4caf50;
+            color: #fff;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            color: #388e3c;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #388e3c;
+            padding-bottom: 5px;
+        }
+
+        section p, section ul {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        section ul {
+            padding-left: 20px;
+        }
+
+        section ul li {
+            margin-bottom: 10px;
+        }
+
+        iframe {
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #388e3c;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        form input[type="submit"] {
+            background: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        form input[type="submit"]:hover {
+            background: #388e3c;
+        }
+
+        footer {
+            background: #388e3c;
+            color: #fff;
+            padding: 40px 20px 20px 20px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #c3e6cb;
+            border-bottom: 2px solid #c3e6cb;
+            padding-bottom: 5px;
+        }
+
+        .footer-section p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #c3e6cb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .member-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .member-list li {
+            margin-bottom: 15px;
+        }
+
+        .member-list li strong {
+            display: block;
+            font-size: 1.1em;
+            color: #c3e6cb;
+            margin-bottom: 5px;
+        }
+
+        .member-list li p {
+            margin: 5px 0;
+            font-size: 0.95em;
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.9em;
+            color: #c3e6cb;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images.png" alt="Logo" style="height: 100px;">
+        <img src="com-lang-vong-111.jpg" alt="Banner" style="width: 100%; height: auto;">
+        <h1>Quảng bá sản phẩm Cốm</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+                <li><a href="#">Trang web khác</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Danh mục</h2>
+            <ul>
+                <li><a href="#cultural-significance">Nguồn gốc và ý nghĩa văn hóa</a></li>
+                <li><a href="#types">Phân loại</a></li>
+                <li><a href="#preparation">Cách chế biến</a></li>
+                <li><a href="#cuisine">Ẩm thực từ cốm</a></li>
+                <li><a href="#nutritional-value">Giá trị dinh dưỡng</a></li>
+                <li><a href="#modern-life">Cốm trong đời sống hiện đại</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="home">
+                <h2>Chào mừng đến với thế giới Cốm</h2>
+                <p>Cốm là một món ăn truyền thống của Việt Nam, đặc biệt phổ biến ở khu vực phía Bắc. Loại thực phẩm này không chỉ mang giá trị ẩm thực mà còn chứa đựng nét đẹp văn hóa đặc sắc. Dưới đây là sự giới thiệu về cốm qua nhiều danh mục:</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/cRBaspMQ3Mk?si=kZ_F-DZeWvsSnlE2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <section id="cultural-significance">
+                <h2>1. Nguồn gốc và ý nghĩa văn hóa</h2>
+                <p>Cốm được làm từ lúa nếp non, thu hoạch khi hạt lúa còn sữa, mang hương vị tự nhiên và mộc mạc. Đây là món ăn truyền thống gắn liền với làng Vòng (Hà Nội) - nơi nổi tiếng nhất về nghệ thuật làm cốm. Trong văn hóa Việt Nam, cốm tượng trưng cho sự thanh khiết, giản dị và gắn bó với thiên nhiên, đồng thời thường xuất hiện trong các dịp lễ hội và cưới hỏi như một biểu tượng của may mắn, hạnh phúc.</p>
+            </section>
+
+            <section id="types">
+                <h2>2. Phân loại</h2>
+                <ul>
+                    <li><strong>Cốm tươi:</strong> Dùng trực tiếp, giữ nguyên hương vị tự nhiên.</li>
+                    <li><strong>Cốm khô:</strong> Bảo quản lâu hơn, thường dùng để làm bánh hoặc nấu chè.</li>
+                    <li><strong>Các sản phẩm từ cốm:</strong> Bánh cốm, chè cốm, xôi cốm, chả cốm…</li>
+                </ul>
+            </section>
+
+            <section id="preparation">
+                <h2>3. Cách chế biến</h2>
+                <ul>
+                    <li><strong>Lúa nếp non:</strong> Được tuốt, phơi khô nhẹ, rang trên lửa nhỏ để giữ độ dẻo.</li>
+                    <li><strong>Giã và sàng lọc:</strong> Hạt lúa rang được giã nhiều lần và sàng lọc để loại bỏ vỏ trấu, tạo thành cốm mềm dẻo.</li>
+                </ul>
+                <p>Quá trình này đòi hỏi người làm phải khéo léo để giữ hương vị thơm ngon tự nhiên.</p>
+            </section>
+
+            <section id="cuisine">
+                <h2>4. Ẩm thực từ cốm</h2>
+                <ul>
+                    <li><strong>Chè cốm:</strong> Hương vị thanh mát, dẻo thơm.</li>
+                    <li><strong>Bánh cốm:</strong> Đặc sản Hà Nội, thường xuất hiện trong các lễ cưới.</li>
+                    <li><strong>Chả cốm:</strong> Món ăn kết hợp giữa cốm và thịt, thường ăn kèm bún đậu mắm tôm.</li>
+                    <li><strong>Xôi cốm:</strong> Món ăn sáng dân dã nhưng giàu dinh dưỡng.</li>
+                </ul>
+            </section>
+
+            <section id="nutritional-value">
+                <h2>5. Giá trị dinh dưỡng</h2>
+                <p>Cốm giàu tinh bột, protein và chất xơ, cung cấp năng lượng tốt cho cơ thể. Hạt cốm còn chứa nhiều vitamin B, E và khoáng chất, giúp tăng cường sức khỏe tiêu hóa và làm đẹp da.</p>
+            </section>
+
+            <section id="modern-life">
+                <h2>6. Cốm trong đời sống hiện đại</h2>
+                <p>Ngày nay, cốm không chỉ là món ăn truyền thống mà còn trở thành quà biếu ý nghĩa trong các dịp lễ tết. Nhiều thương hiệu đã phát triển sản phẩm cốm đóng gói hiện đại, tiện dụng và an toàn, giữ nguyên nét đẹp văn hóa mà vẫn phù hợp với cuộc sống bận rộn.</p>
+            </section>
+
+            <section id="contact">
+                <h2>Liên hệ</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5433949966623!2d105.82909367503088!3d21.010932680633946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab805e9cf84f%3A0x33c0794f61b4dff3!2zVHLGsOG7nW5nIFRIUFQgS2ltIExpw6pu!5e0!3m2!1svi!2s!4v1739202189453!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <form>
+                    <label for="name">Tên:</label>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br>
+                    <label for="message">Lời nhắn:</label>
+                    <textarea id="message" name="message"></textarea><br>
+                    <input type="submit" value="Gửi">
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Giới thiệu</h3>
+                <p>Chúng tôi là nhóm quảng bá sản phẩm cốm truyền thống Việt Nam. Hãy liên hệ với chúng tôi để biết thêm chi tiết!</p>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Thành viên nhóm</h3>
+                <ul class="member-list">
+                    <li>
+                        <strong>Đỗ Bảo Châu</strong>
+                        <p>Email: <a href="mailto:dopotterharry@gmail.com">dopotterharry@gmail.com</a></p>
+                        <p>Sđt: 033 9909901</p>
+                    </li>
+                    <li>
+                        <strong>Nguyễn Mai Linh</strong>
+                        <p>Email: <a href="mailto:nmailinh.2705@gmail.com">nmailinh.2705@gmail.com</a></p>
+                        <p>Sđt: 096 4400456</p>
+                    </li>
+                    <li>
+                        <strong>Nguyễn Hà Chi</strong>
+                        <p>Email: <a href="mailto:nguyenhachi2203@gmail.com">nguyenhachi2203@gmail.com</a></p>
+                        <p>Sđt: 084 2581138</p>
+                    </li>
+                    <li>
+                        <strong>Nguyễn Minh Khuê</strong>
+                        <p>Email: <a href="mailto:nguyenminhkhue611@gmail.com">nguyenminhkhue611@gmail.com</a></p>
+                        <p>Sđt: 096 4287806</p>
+                    </li>
+                    <li>
+                        <strong>Ngô Hà Phương</strong>
+                        <p>Email: <a href="mailto:nhp.0321@gmail.com">nhp.0321@gmail.com</a></p>
+                        <p>Sđt: 0972583203</p>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Liên hệ chung</h3>
+                <p>Email: <a href="mailto:email@example.com">nhp.0321@gmail.com</a></p>
+                <p>Điện thoại: 0972583203</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 Quảng bá sản phẩm Cốm. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+</body>
+</html>
